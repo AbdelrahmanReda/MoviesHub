@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            background-color: mintcream;
+        }
+
+        .search-bar-container {
+            margin-top: 30px;
+
+            width: 100%;
+
+
+        }
+
+        .search-form {
+            width: 100%;
+        }
+
+        #search-btn {
+            border: 2px solid white;
+            position: absolute;
+            right: 15px;
+            border-radius: 6px;
+            height: 40px;
+            width: 113px;
+            background-color: #ff8400;
+            font-size: 15px;
+            font-weight: 400;
+            color: white;
+
+
+        }
+
+        #seach-input-field {
+            outline: none;
+            height: 40px;
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid rgba(128, 128, 128, 0.109);
+            padding: 0px 120px 0px 20px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            color: gray;
+
+        }
+
+        .img-fluid {
+            
+            background: ( to top , #000000 10%, #020202 10%, transparent);
+            border: 1px solid #0000001a;
+            height: auto;
+            border-radius: 15px;
+            border: none;
+            padding: 0px;
+            background-size: cover;
+
+            background-position: top;
+            box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, .8);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .img-fluid.logo {
+            box-shadow: initial;
+            border: 1px solid #0000001a;
+            max-width: 65%;
+            height: auto;
+            border-radius: 6px;
+            border: none;
+            padding: 0px;
+        }
+
+        ::placeholder {
+            color: rgba(0, 0, 0, 0.418);
+            font-size: 15px;
+        }
+
+        .btn.focus,
+        .btn:focus {
+            outline: none;
+            box-shadow: initial;
+        }
+
+        .dropdown-menu {
+            background-color: rgb(238, 238, 238);
+            border: none;
+            border-radius: 10px;
+
+            margin-top: 11px;
+        }
+
+        .btn-secondary:not(:disabled):not(.disabled).active:focus,
+        .btn-secondary:not(:disabled):not(.disabled):active:focus,
+        .show>.btn-secondary.dropdown-toggle:focus {
+            box-shadow: initial;
+        }
+        .btn-secondary {
+            border-radius: 45px;
+            border: none;
+            color: #4e555b;
+            background-color: white;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .btn-secondary:hover {
+            border-radius: 45px;
+            border: none;
+            color: #4e555b;
+            background-color: #e7e7e7;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .container-fluid.drop-menu {
+
+            width: 1200px;
+
+
+        }
+
+        .show>.btn-secondary.dropdown-toggle {
+            color: grey;
+            background-color: rgb(230, 230, 230);
+            border-color: #4e555b;
+        }
+
+        .alter-image {
+
+            max-width: 100%;
+            height: auto;
+
+        }
+        .drop-menue-cover-contaienr{
+            background-image: linear-gradient( to top , #000000 10%, #020202 10%, transparent) , url(poster.png);
+
+            width: 100%;
+    height: 100%;
+    background-color: #cd2626;
+    border-radius: 20px;
+    background-size: contain;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container-fluid" style="background-color: orange ; padding: 0px; ">
+            <div class="row" style="margin:0px;">
+                <div class="col-lg-3 col-4 d-flex align-items-center justify-content-center">
+                    <img src="logo.png" class="img-fluid logo" alt="Responsive image">
+                </div>
+                <div class="col-lg-6 col-4" style=" height: 100px;">
+                    <div class="search-bar-container">
+                        <form class="search-form" action="">
+                            <input id="search-btn" type="submit" value="search" />
+                            <input id="seach-input-field" type="text"
+                                placeholder="SEARCH FOR WOLF OF THE WALL STREET..." />
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-4">
+                </div>
+            </div>
+            <div class="row"
+                style="padding: 10px; margin:0px; background-color: rgb(255, 255, 255);  border-bottom: 1px solid rgba(0, 0, 0, 0.171) ; border-top: 1px solid rgba(0, 0, 0, 0.157);">
+                <div class="col" style=" padding:0px; margin: 0px; ">
+                    <div class="dropdown" style="height: 100%;">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 100%;">
+                            FEATURES
+                            <div class="sticker-container " style="width: 50px;  float: right;  padding-left: 5px;  ">
+                                <div id="btn-sticker"
+                                    style="width: 50px; background-color: rgb(0, 68, 255); border-radius: 40px; color: white;  ">
+                                    NEW
+                                </div>
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="container-fluid drop-menu">
+                                <div class="row" ">
+                                    <div class=" col-lg-6" style="  height: 300px;">
+                                    <div class="drop-menue-cover-contaienr" style="background-image:  linear-gradient( to top , #000000 10%, #020202 10%, transparent) ,url(https://www.nydailynews.com/polopoly_fs/1.1643576!img/httpImage/blog-breakingbad-walt0915-jpg.jpg);
+                                    background-size: cover;">
+
+                                    </div>
+
+                                </div>
+                                
+                                <div class="col-lg-3" style=" ">
+                                    <div class="drop-menue-cover-contaienr">
+
+                                    </div>
+                                   
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <div class="drop-menue-cover-contaienr">
+
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="dropdown" style="height: 100%;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 100%;">
+                        Action
+                        <div class="sticker-container " style="width: 50px;  float: right;  padding-left: 5px;  ">
+                            <div id="btn-sticker"
+                                style="width: 50px; background-color: rgb(255, 0, 0); border-radius: 40px; color: white;  ">
+                                Hot
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="container-fluid drop-menu">
+                            <div class="row" style="border: 1px solid black;">
+                                <div class="col-lg-3" style="height: 300px;">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" ">
+                                        <img src=" poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" ">
+                                        <img src=" poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" ">
+                                        <img src=" poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="dropdown" style="height: 100%;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="height: 100%; background-color: #ff840017;">
+                        New Upcomming
+                        <div class="sticker-container " style="float: right;  padding-left: 5px;  ">
+                            <div id="btn-sticker"
+                                style="width: 60px; background-color: rgb(255, 145, 0); border-radius: 40px; color: white;  ">
+                                reserve
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="container-fluid drop-menu">
+                            <div class="row" style="border: 1px solid black;">
+                                <div class="col-lg-3" style="  height: 300px;">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="dropdown" style="height: 100%;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 100%;">
+                        Cinemas Locations
+                        <div class="sticker-container " style="width: 50px;  float: right;  padding-left: 5px;  ">
+                            <div id="btn-sticker"
+                                style="width: 50px; background-color: rgb(53, 185, 1); border-radius: 40px; color: white;  ">
+                                NEW
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="container-fluid drop-menu">
+                            <div class="row" style="border: 1px solid black;">
+                                <div class="col-lg-3" style="  height: 300px;">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-bg-2">
+                <div class="dropdown" style="height: 100%;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 100%;">
+                        FEATURES
+                        <div class="sticker-container " style="width: 50px;  float: right;  padding-left: 5px;  ">
+                            <div id="btn-sticker"
+                                style="width: 50px; background-color: rgb(255, 0, 0); border-radius: 40px; color: white;  ">
+                                NEW
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="container-fluid drop-menu">
+                            <div class="row" style="border: 1px solid black;">
+                                <div class="col-lg-3" style="  height: 300px;">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-bg-2">
+                <div class="dropdown" style="height: 100%;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 100%;">
+                        FEATURES
+                        <div class="sticker-container " style="width: 50px;  float: right;  padding-left: 5px;  ">
+                            <div id="btn-sticker"
+                                style="width: 50px; background-color: rgb(255, 0, 0); border-radius: 40px; color: white;  ">
+                                NEW
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="container-fluid drop-menu">
+                            <div class="row" style="border: 1px solid black;">
+                                <div class="col-lg-3" style="  height: 300px;">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                                <div class="col-lg-3" style=" ">
+                                    <img src="poster.png" class="img-fluid" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+</body>
+
+</html>
